@@ -22,12 +22,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> findAll() {
-        return List.of();
+        return customerRepository.findAll();
     }
 
     @Override
     public Customer findById(Integer id) {
-        return null;
+        return customerRepository.findById(id).get();
     }
 
     @Override
