@@ -2,10 +2,10 @@ package com.crudfullstack.crud_springboot_angular.controller;
 import com.crudfullstack.crud_springboot_angular.entity.Customer;
 import com.crudfullstack.crud_springboot_angular.service.CustomerService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/customers")
 public class CustomerController {
     private final CustomerService customerService;
 
