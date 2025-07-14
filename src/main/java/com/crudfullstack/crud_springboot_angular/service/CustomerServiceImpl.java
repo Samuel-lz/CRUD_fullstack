@@ -32,11 +32,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void deleteById(Integer id) {
-
+        customerRepository.deleteById(id);
     }
 
     @Override
     public Customer update(Customer customer) {
-        return null;
+        return customerRepository.save(customer);
     }
 }

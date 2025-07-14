@@ -27,4 +27,18 @@ public class CustomerController {
     public Customer findById(@PathVariable Integer id) {
         return customerService.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        customerService.deleteById(id);
+    }
+
+    @PutMapping
+    public Customer update(@RequestBody Customer customer) {
+        Customer customerDB = customerService.findById(customer.getId());
+        customerDB.setFirstName(customer.getFirstName());
+        customerDB.setLastName(customer.getLastName());
+        customerDB.setEmail(customer.getEmail());
+        return customerService.update(customer);
+    }
 }
